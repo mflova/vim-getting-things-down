@@ -15,14 +15,14 @@ function! getting_things_down#show_todo()
       endif
     else
       let l:project_root = fnameescape(expand('%:p:h'))
-      let l:todo_file = glob(l:project_root . '/**/TODO.*')
+      let l:todo_file = '~/TODO.md'
       while empty(l:todo_file)
         let l:project_root = fnamemodify(l:project_root, ':h')
         if fnamemodify(l:project_root, ':h') == $HOME
           echohl WarningMsg | echo 'TODO file not found.' | echohl None
           return 0
         endif
-        let l:todo_file = get(glob(l:project_root . '/**/TODO.*', 0, 1), 0)
+        let l:todo_file = '~/TODO.md'
       endwhile
       execute 'edit ' . l:todo_file
       let b:from_file = fnameescape(expand('#'))
