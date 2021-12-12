@@ -10,7 +10,7 @@ syntax match markdownOrderedListMarker "\%(\t\| \{0,4}\)\<\d\+\.\%(\s\+\S\)\@=" 
 
 syntax keyword markdownTodoDoneN DONE contained
 syntax keyword markdownTodoReadyN TODO WIP contained
-syntax keyword markdownTodoWaitingN HELP WAIT contained
+syntax keyword markdownTodoWaitingN HELP WAIT BLOCKED contained
 
 highlight link markdownTodoDoneN DiffAdd
 highlight link markdownTodoReadyN DiffChange
@@ -27,7 +27,7 @@ syntax region markdownH6 matchgroup=markdownHeadingDelimiter start="#######\@!" 
 
 syntax match markdownTodoDoneC /\(^#\{1,6\}\s*\)\@<=DONE\s\@=/ contained
 syntax match markdownTodoReadyC /\(^#\{1,6\}\s*\)\@<=\(TODO\|WIP\)\s\@=/ contained
-syntax match markdownTodoWaitingC /\(^#\{1,6\}\s*\)\@<=\(HELP\|WAIT\)\s\@=/ contained
+syntax match markdownTodoWaitingC /\(^#\{1,6\}\s*\)\@<=\(HELP\|WAIT\|BLOCKED\)\s\@=/ contained
 
 highlight link markdownTodoDoneC DiffAdd
 highlight link markdownTodoReadyC DiffChange
